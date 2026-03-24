@@ -201,6 +201,17 @@ h2{
 .yes{
     color: #0072ff;
 }
+@media (max-width:390) {
+    .main img {
+        width: 150px;
+        height: 150px;
+    }
+    .photos img{
+        width: 40px;
+        height: 40px;
+    }
+    
+}
     </style>
 </head>
 <body>
@@ -235,17 +246,17 @@ h2{
             <img onclick="main.src = this.src" src="1.png" alt="...">
             <img onclick="main.src = this.src" src="2.png" alt="...">
             <img onclick="main.src = this.src" src="3.png" alt="...">
-            <img onclick="main.src = this.src" src="2.png" alt="...">    
+            <img onclick="main.src = this.src" src="images.png" alt="...">    
         </div>
         <div class="main" id="main">
-            <img src="1.png" name="main" alt="...">
+            <img src="images.png" name="main" alt="...">
         </div>
         <h4>لو وقفت الماوس على صورة من الصور دي هتتحط في النص</h4>
         <div class="photos">
             <img onmouseenter="main.src = this.src" src="1.png" alt="...">
             <img onmouseenter="main.src = this.src" src="2.png" alt="...">
             <img onmouseenter="main.src = this.src" src="3.png" alt="...">
-            <img onmouseenter="main.src = this.src" src="4.jpg" alt="...">    
+            <img onmouseenter="main.src = this.src" src="images.png" alt="...">    
         </div>
     </div>
     <p class="quote"></p>
