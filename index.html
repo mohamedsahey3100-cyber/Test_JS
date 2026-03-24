@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Java Script</title>
+    <link rel="icon" href="ChatGPT Image 24 مارس 2026، 11_07_55 م.png">
+    <style>
+        body{
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* الكروت */
+.teach{
+    width: 75%;
+    margin: 20px auto;
+    background: #ffffff;
+    color: #000;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+/* Inputs */
+input{
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    width: 60%;
+    transition: 0.3s;
+}
+
+input:focus{
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px #00c6ff;
+    outline: none;
+}
+
+/* Buttons */
+.nameBtn{
+    background: linear-gradient(45deg, #000, #333);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.nameBtn:hover{
+    background: linear-gradient(45deg, red, blue);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Error */
+#error{
+    display: none;
+    color: red;
+    margin-top: 5px;
+}
+
+/* Hide */
+.hide{
+    display: none;
+}
+
+/* Scroll Button */
+#btnUp{
+    background: linear-gradient(45deg, #00c6ff, #0072ff);
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/* Gallery */
+.photos img{
+    height: 60px;
+    width: 60px;
+    border: 3px solid #aaa;
+    margin: 5px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.photos img:hover{
+    cursor: pointer;
+    border-color: #00ff88;
+    transform: scale(1.1);
+}
+
+.main img{
+    height: 300px;
+    width: 300px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+
+/* Navbar */
+.nav{
+    text-align: left;
+}
+
+.nav .container{
+    width: 120px;
+    background: #ff3c3c;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container p{
+    padding: 10px;
+    color: white;
+    margin: 0;
+    transition: 0.3s;
+}
+
+.container p:hover{
+    background: #000;
+    cursor: pointer;
+}
+
+.nav button{
+    background: #ff3c3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.nav button:hover{
+    background: #000;
+    cursor: pointer;
+}
+
+/* Focus Effect */
+.focused-shadow {
+    box-shadow: 0 0 10px rgba(81, 203, 238, 1);
+    border: 1px solid rgba(81, 203, 238, 1);
+}
+
+/* Timer */
+.timer button{
+    padding: 10px 20px;
+    font-size: larger;
+    background: linear-gradient(45deg, #00c853, #00e676);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.timer button:hover{
+    background: #000;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* Titles */
+h1{
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+h2{
+    margin-bottom: 10px;
+}
+.quote{
+    font-size: 18px;
+    margin: 0;
+    min-height: 40px;
+    color: yellow;
+}
+#users{
+    margin-top: 15px;
+}
+
+.user-card{
+    background: #f5f5f5;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: left;
+}
+.yes{
+    color: #0072ff;
+}
+    </style>
+</head>
+<body>
+    <h1>ممكن تعمل اي بلغة الجافا سكريبت</h1>
+    <h3>ده موقع كامل مستخدم فيه لغات الـ</h3>
+    <h3>HTML , CSS , Java script</h3>
+    <p class="quote"></p>
+    <button id="btnUp">^</button>
+    <div class="teach user" id="user">
+        <div id="lastName" class="hide">
+            <h2 id="upTitle">تـم الحـفظ يا</h2>
+            <h2 id="tilteLast"></h2>
+            <button class="nameBtn" id="btnLast">عدل الأسم</button>
+        </div>
+        <div id="loginName">
+            <h2 id="titleLogin">أكتب أسمك هنا</h2>
+            <input type="text" id="newName" placeholder="صـلـي على الـنـبـي">
+            <button class="nameBtn" id="btnNewName" onclick="loginName()">دخل أسمك</button><br>
+            <p id="error"></p>
+        </div>
+    </div>
+    <p class="quote"></p>
+    <div class="teach" id="autoFocas">
+        <h2>كل ما الصفحة تحمل هيعمل تركيز على العنصر ده</h2>
+        <hr>
+        <input type="text" class="my-input" id="text" placeholder="ركز هنا">
+    </div>
+    <p class="quote"></p>
+    <div class="gallary teach" id="gallary">
+        <h4>لو ضغط على صورة من الصور دي هتتحط في النص</h4>
+        <div class="photos">
+            <img onclick="main.src = this.src" src="1.png" alt="...">
+            <img onclick="main.src = this.src" src="2.png" alt="...">
+            <img onclick="main.src = this.src" src="3.png" alt="...">
+            <img onclick="main.src = this.src" src="2.png" alt="...">    
+        </div>
+        <div class="main" id="main">
+            <img src="1.png" name="main" alt="...">
+        </div>
+        <h4>لو وقفت الماوس على صورة من الصور دي هتتحط في النص</h4>
+        <div class="photos">
+            <img onmouseenter="main.src = this.src" src="1.png" alt="...">
+            <img onmouseenter="main.src = this.src" src="2.png" alt="...">
+            <img onmouseenter="main.src = this.src" src="3.png" alt="...">
+            <img onmouseenter="main.src = this.src" src="4.jpg" alt="...">    
+        </div>
+    </div>
+    <p class="quote"></p>
+    <div class="teach nav" id="nav">
+        <h3 class="title">دي قايمة تقدر تفتحها وتقفلها بالزراير</h3>
+        <button class="hide" id="open">open</button>
+        <button id="close">close</button>
+        <div id="container" class="container">
+            <p>home</p>
+            <p>courser</p>
+            <p>news</p>
+            <p>chat</p>
+        </div>
+    </div>
+    <p class="quote"></p>
+    <div class="srceen teach" id="screen">
+        <h2>معلومات عن جهازك</h2>
+        <h4 id="scwidth"></h4>
+        <h4 id="scheight"></h4>
+        <h4 id="scavwidh"></h4>
+        <h4 id="scavheight"></h4>
+        <h4 id="sccolordepth"></h4>
+    </div>
+    <p class="quote"></p>
+    <div class="web teach" id="web">
+        <h2>معلومات عن الموقع</h2>
+        <h4 id="href"></h4>
+        <h4 id="proto"></h4>
+        <h4 id="host"></h4>
+        <h4 id="path"></h4>
+    </div>
+    <p class="quote"></p>
+    <div class="teach timer" id="timer">
+        <h4>لو دوست على الزرار هيشغل مؤقت 3 ثواني</h4>
+        <h2 id="time"></h2>
+        <button id="timeBtn" onclick="time()">بـدأ</button>
+    </div>
+    <p class="quote"></p>
+
+    <div class="wellcome teach" id="wellcome">
+        <h1>مع تحياتي</h1>
+        <h1 class="yes">محمد سهري السيد محمد</h1>
+    </div>
+
+    <script>
+        // ==========================
+// ✅ Login + LocalStorage
+// ==========================
+function loginName(){
+    let value = document.getElementById('newName').value.trim();
+    let error = document.getElementById('error');
+    let login = document.getElementById('loginName');
+    let last = document.getElementById('lastName');
+    let lastTitle = document.getElementById('tilteLast');
+
+    if(value === ''){
+        error.innerText = 'أكتب أسمك';
+        error.style.display = 'block';
+    }else{
+        error.style.display = 'none';
+
+        localStorage.setItem('username', value);
+
+        login.classList.add('hide');
+        last.classList.remove('hide');
+
+        lastTitle.innerText = value;
+    }
+}
+
+
+// ==========================
+// ✅ Rename User
+// ==========================
+document.getElementById('btnLast').onclick = function(){
+    let login = document.getElementById('loginName');
+    let last = document.getElementById('lastName');
+    let tab = document.getElementById('newName');
+
+    let savedName = localStorage.getItem("username");
+
+    login.classList.remove('hide');
+    last.classList.add('hide');
+
+    tab.value = '';
+    tab.placeholder = savedName;
+}
+
+
+// ==========================
+// ✅ عند فتح الصفحة
+// ==========================
+window.onload = function(){
+
+    let value = localStorage.getItem("username");
+
+    let title = document.getElementById('upTitle');
+    let Name = document.getElementById('tilteLast');
+    let login = document.getElementById('loginName');
+    let last = document.getElementById('lastName');
+    let txt = document.getElementById('text');
+
+    if(value){
+        title.innerText = 'مرحباً بيك 👋';
+        Name.innerText = value;
+
+        login.classList.add('hide');
+        last.classList.remove('hide');
+    }
+
+    // Focus
+    txt.focus();
+    txt.classList.add('focused-shadow');
+};
+
+
+// ==========================
+// ✅ Nav Menu
+// ==========================
+let btnOpen = document.getElementById('open');
+let btnClose = document.getElementById('close');
+let nav = document.getElementById('container');
+
+btnClose.onclick = function () {
+    btnClose.classList.add('hide');
+    nav.classList.add('hide');
+    btnOpen.classList.remove('hide');
+};
+
+btnOpen.onclick = function () {
+    btnClose.classList.remove('hide');
+    nav.classList.remove('hide');
+    btnOpen.classList.add('hide');
+};
+
+
+// ==========================
+// ✅ Scroll Up Button
+// ==========================
+let btnUp = document.getElementById('btnUp');
+
+window.onscroll = function () {
+    if (window.scrollY >= 200) {
+        btnUp.style.display = 'block';
+    } else {
+        btnUp.style.display = 'none';
+    }
+};
+
+btnUp.onclick = function () {
+    window.scroll({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+
+
+// ==========================
+// ✅ Device Info
+// ==========================
+document.getElementById('scwidth').innerText = 'عرض جهازك: ' + screen.width;
+document.getElementById('scheight').innerText = 'طول جهازك: ' + screen.height;
+document.getElementById('scavwidh').innerText = 'العرض المتاح: ' + screen.availWidth;
+document.getElementById('scavheight').innerText = 'الطول المتاح: ' + screen.availHeight;
+document.getElementById('sccolordepth').innerText = 'دقة الألوان: ' + screen.colorDepth;
+
+
+// ==========================
+// ✅ Web Info
+// ==========================
+document.getElementById('href').innerText = 'URL: ' + location.href;
+document.getElementById('proto').innerText = 'PROTOCOL: ' + location.protocol;
+document.getElementById('host').innerText = 'HOST: ' + location.host;
+document.getElementById('path').innerText = 'PATH: ' + location.pathname;
+
+
+// ==========================
+// ✅ Timer
+// ==========================
+let timeBtn = document.getElementById('timeBtn');
+let timeH4 = document.getElementById('time');
+
+function time() {
+    let i = 3;
+
+    timeBtn.disabled = true;
+    timeH4.style.display = 'block';
+
+    let inTime = setInterval(function () {
+        timeH4.innerText = i;
+        i--;
+        timeBtn.style.display = 'none';
+
+        if (i < 0) {
+            clearInterval(inTime);
+            timeH4.innerText = "خلص ⏱️";
+            timeBtn.disabled = false;
+            timeBtn.textContent = 'تاني';
+            timeBtn.style.display = 'block';
+        }
+
+    }, 1000);
+}
+function getQuote(){
+    let i = 0;
+    let tab = document.querySelectorAll('.quote');
+let quotes = [
+"🌟 Never give up — متستسلمش",
+"🔥 Practice makes perfect — التدريب يصنع الاحتراف",
+"💻 Code is like humor — الكود زي الهزار لو محتاج شرح يبقى مش مظبوط",
+"🚀 Start now — ابدأ دلوقتي",
+"🎯 Stay focused — خليك مركز",
+"⚡ Learn by doing — اتعلم بالتجربة",
+"🧠 Think different — فكر بشكل مختلف",
+"📈 Improve every day — حسن نفسك كل يوم",
+"💡 Work smart — اشتغل بذكاء",
+"🏆 Success takes time — النجاح بياخد وقت",
+
+"💪 Keep going — كمل مهما حصل",
+"📚 Knowledge is power — العلم قوة",
+"🎮 Enjoy the process — استمتع بالتعلم",
+"🔁 Try again — حاول تاني",
+"🛠️ Solve problems — حل المشاكل",
+"🌍 Work from anywhere — اشتغل من أي مكان",
+"⌛ Be patient — خليك صبور",
+"📊 Small steps matter — الخطوات الصغيرة مهمة",
+"🧩 Break it down — قسم المشكلة",
+"⚙️ Focus on basics — ركز على الأساسيات",
+
+"💻 Coding is fun — البرمجة ممتعة",
+"🔥 Hard work pays off — التعب بيجيب نتيجة",
+"🚧 No shortcuts — مفيش طريق مختصر",
+"🎯 Set your goal — حدد هدفك",
+"📈 Progress daily — اتقدم كل يوم",
+"👀 Learn from others — اتعلم من غيرك",
+"📢 Ask questions — اسأل ومتكسفش",
+"💡 Ideas matter — الأفكار مهمة",
+"🚀 Build projects — اعمل مشاريع",
+"🧠 Train your mind — درب عقلك",
+
+"🌟 Believe in yourself — ثق في نفسك",
+"🔥 Stay motivated — خليك متحمس",
+"💪 Be consistent — خليك مستمر",
+"📚 Never stop learning — متبطلش تعلم",
+"🎮 Learn and play — اتعلم واستمتع",
+"⚡ Take action — ابدأ التنفيذ",
+"🧩 Think like a dev — فكر كمبرمج",
+"📊 Track your progress — تابع تقدمك",
+"🚀 Dream big — احلم كبير",
+"💻 Practice daily — اتدرب يوميًا",
+
+"⌛ Time matters — الوقت مهم",
+"🎯 Focus on one thing — ركز على حاجة واحدة",
+"🛠️ Fix errors — صلح الأخطاء",
+"🔥 Keep learning — استمر في التعلم",
+"💡 Be creative — كن مبدع",
+"📈 Grow slowly — كبر واحدة واحدة",
+"👨‍💻 Code more — اكتب كود أكتر",
+"🌍 Explore tech — اكتشف التكنولوجيا",
+"🏆 Aim high — اسعى للأعلى",
+"💎 Skills over degree — المهارة أهم من الشهادة"
+];
+
+setInterval(function(){
+    for(let j =0;j<tab.length;j++){
+        tab[j].innerText = quotes[i];
+    }
+    i++;
+    if(i==quotes.length){
+        i = 0
+    }
+},3000)
+
+}
+getQuote();
+
+    </script>
+</body>
+</html>
